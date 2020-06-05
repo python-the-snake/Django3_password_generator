@@ -32,6 +32,7 @@ def password(request, oldlist=()):
     thepassword = ''
     for x in range(lenght):
         thepassword += random.choice(characters)
+        newpassword.insert(0, thepassword)
 
     return render(request, 'generator/password.html', {'password': thepassword})
-
+    return render(request, 'generator/oldpasswords.html', {'password': newpassword})
